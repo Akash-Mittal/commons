@@ -18,8 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = { "createdAt", "updatedAt" }, allowGetters = true)
-@Deprecated
-public abstract class AuditModel implements Serializable {
+public abstract class AuditEntity extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = -6677801515527172761L;
 
@@ -47,5 +46,10 @@ public abstract class AuditModel implements Serializable {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "AuditEntity [createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
     }
 }
