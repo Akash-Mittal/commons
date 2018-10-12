@@ -16,8 +16,8 @@
 	<artifactId>commons</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-	<name>predicates\</name>
-	<url>http://www.example.com</url>
+	<name>Commons</name>
+	
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
