@@ -2,8 +2,11 @@
 
 ## validators
 
-Toolkit for Enterprise Level Validations.
+* Toolkit for Enterprise Level `Validations`.
 
+## Entities
+
+* Serves common for all `JPA/Hibernate` projects which need `Base Entities`.
 
 ### How to add as Dependency.
 
@@ -22,9 +25,8 @@ Toolkit for Enterprise Level Validations.
 
       <dependency>
           <groupId>com.github.Akash-Mittal</groupId>
-              <artifactId>validators</artifactId>
+              <artifactId>commons</artifactId>
           <version>master-SNAPSHOT</version>
       </dependency>
 
 	  
-## Entities
