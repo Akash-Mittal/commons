@@ -3,12 +3,12 @@
 ## validators
 
 * Toolkit for Enterprise Level `Validations`.
+* `Fail Safe` behaviour via `Java 8 ` `Predicates` and `BiPredicates`.  
 
 ## Entities
 
 * Serves common Entities for all `JPA/Hibernate` projects which need `Auditable Entities`.
 * Features `id`, `createdTime` , `lastUpdated`, `createdBy` et al.
-* `Fail Safe` behaviour via `Java 8 ` `Predicates` and `BiPredicates`.  
 
 ### How to add as Dependency.
 
