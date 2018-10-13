@@ -2,7 +2,8 @@
 
 ## validators
 
-* Toolkit for Enterprise Level `Validations`.
+*  Toolkit for Enterprise Level `Validations`.
+*  Also adds `guava` libraries for Predicates 
 * `Fail Safe` behaviour via `Java 8 ` `Predicates` and `BiPredicates`.  
 
 ## Entities
