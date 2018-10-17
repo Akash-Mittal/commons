@@ -2,7 +2,7 @@ package com.am.innovations.validations;
 
 public enum Symbol {
 
-	UNDERSCORE("_");
+	UNDERSCORE("_"), SPACE(" "), COLON(":");
 
 	String val;
 
