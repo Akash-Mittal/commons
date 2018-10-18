@@ -1,5 +1,12 @@
 # Commons
 
+[![Build Status](https://travis-ci.org/Akash-Mittal/commons.svg?branch=master)](https://travis-ci.org/Akash-Mittal/commons)
+[![GitHub issues](https://img.shields.io/github/issues/Akash-Mittal/commons.svg)](https://github.com/Akash-Mittal/commons/issues)
+[![GitHub forks](https://img.shields.io/github/forks/Akash-Mittal/commons.svg)](https://github.com/Akash-Mittal/commons/network)
+[![GitHub stars](https://img.shields.io/github/stars/Akash-Mittal/commons.svg)](https://github.com/Akash-Mittal/commons/stargazers)
+[![GitHub license](https://img.shields.io/github/license/Akash-Mittal/commons.svg)](https://github.com/Akash-Mittal/commons/blob/master/LICENSE)
+
+
 ## validators
 
 *  Toolkit for Enterprise Level `Validations`.
