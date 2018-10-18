@@ -9,10 +9,16 @@ import com.am.innovations.exception.ValidationException;
 public interface Validators extends Predicate<Number> {
 
 	Predicate<Object> checkIfNotNull = input -> input != null;
-
+	/*
+	 * Caution : Not to be used for Precision Checking 1.1 equal to 1 will return
+	 * true.
+	 */
 	BiPredicate<Number, Number> checkIfEqualsTo = (input, constraint) -> input.intValue() == constraint.intValue();
 	BiPredicate<Number, Number> checkIfGreaterThan = (input, constraint) -> input.intValue() > constraint.intValue();
 	BiPredicate<Number, Number> checkIfLessThan = (input, constraint) -> input.intValue() < constraint.intValue();
+
+	BiPredicate<Enum, Enum> checkIfEqualsEnum = (input, constraint) -> input == constraint
+			|| input.name() == constraint.name();
 
 	BiPredicate<Object[], Integer> checkArrayIfSizeEqualsTo = (input, size) -> Validators.checkIfEqualsTo
 			.test(input.length, size);
@@ -47,7 +53,7 @@ public interface Validators extends Predicate<Number> {
 	interface FailFastNonNullValidators {
 
 		BiPredicate<Number, Number> checkIfEqualsTo = (input, constraint) -> {
-			if (!FailSafeNonNullValidators.checkIfEqualsTo.test(input, constraint)) {
+			if (FailSafeNonNullValidators.checkIfEqualsTo.negate().test(input, constraint)) {
 				throw new ValidationException(getLogLine(input, constraint, VALIDATION_OPRATIONS.EQUALSTO));
 			}
 			return true;
