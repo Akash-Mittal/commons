@@ -28,7 +28,7 @@ public interface Validators extends Predicate<Number> {
 	BiPredicate<Object[], Integer> checkArrayIfSizeLessThan = (input, size) -> Validators.checkIfLessThan
 			.test(input.length, size);
 
-	interface FailSafeNonNullValidators {
+	interface FailSafeNonNull {
 
 		BiPredicate<Number, Number> checkIfEqualsTo = (input, constraint) -> checkIfNotNull.test(input)
 				&& Validators.checkIfEqualsTo.test(input, constraint);
@@ -50,10 +50,10 @@ public interface Validators extends Predicate<Number> {
 
 	}
 
-	interface FailFastNonNullValidators {
+	interface FailFastNonNull {
 
 		BiPredicate<Number, Number> checkIfEqualsTo = (input, constraint) -> {
-			if (FailSafeNonNullValidators.checkIfEqualsTo.negate().test(input, constraint)) {
+			if (FailSafeNonNull.checkIfEqualsTo.negate().test(input, constraint)) {
 				throw new ValidationException(getLogLine(input, constraint, VALIDATION_OPRATIONS.EQUALSTO));
 			}
 			return true;
