@@ -60,8 +60,8 @@ public interface Validators extends Predicate<Number> {
 		};
 
 		static String getLogLine(Number input, Number constraint, VALIDATION_OPRATIONS oprations) {
-			return VALIDATION_LOGS.GIVEN_INPUT.toString() + Symbol.SPACE + input + Symbol.SPACE + VALIDATION_LOGS.IS_NOT
-					+ oprations + Symbol.SPACE + VALIDATION_LOGS.TEST_VALUE + Symbol.SPACE + constraint;
+			return VALIDATION_LOGS.GIVEN_INPUT.toString() + SYMBOLS.SPACE + input + SYMBOLS.SPACE + VALIDATION_LOGS.IS_NOT
+					+ oprations + SYMBOLS.SPACE + VALIDATION_LOGS.TEST_VALUE + SYMBOLS.SPACE + constraint;
 		}
 
 	}
