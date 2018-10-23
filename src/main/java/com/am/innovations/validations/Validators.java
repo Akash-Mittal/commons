@@ -1,10 +1,7 @@
 package com.am.innovations.validations;
 
-import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
-
-import com.am.innovations.exception.ValidationException;
 
 public interface Validators extends Predicate<Number> {
 
@@ -28,59 +25,4 @@ public interface Validators extends Predicate<Number> {
 	BiPredicate<Object[], Integer> checkArrayIfSizeLessThan = (input, size) -> Validators.checkIfLessThan
 			.test(input.length, size);
 
-	interface FailSafeNonNull {
-
-		BiPredicate<Number, Number> checkIfEqualsTo = (input, constraint) -> checkIfNotNull.test(input)
-				&& Validators.checkIfEqualsTo.test(input, constraint);
-
-		BiPredicate<Number, Number> checkIfGreaterThan = (input, constraint) -> checkIfNotNull.test(input)
-				&& Validators.checkIfGreaterThan.test(input, constraint);
-
-		BiPredicate<Number, Number> checkIfLessThan = (input, constraint) -> checkIfNotNull.test(input)
-				&& Validators.checkIfLessThan.test(input, constraint);
-
-		BiPredicate<Object[], Integer> checkIfNotNullAndSizeEqualsTo = (input, size) -> checkIfNotNull.test(input)
-				&& checkIfEqualsTo.test(input.length, size);
-
-		BiPredicate<Object[], Integer> checkIfNotNullAndSizeGreaterThan = (input, size) -> checkIfNotNull.test(input)
-				&& checkIfGreaterThan.test(input.length, size);
-
-		BiPredicate<Object[], Integer> checkIfNotNullAndSizeLessThan = (input, size) -> checkIfNotNull.test(input)
-				&& checkIfLessThan.test(input.length, size);
-
-	}
-
-	interface FailFastNonNull {
-
-		BiPredicate<Number, Number> checkIfEqualsTo = (input, constraint) -> {
-			if (FailSafeNonNull.checkIfEqualsTo.negate().test(input, constraint)) {
-				throw new ValidationException(getLogLine(input, constraint, VALIDATION_OPRATIONS.EQUALSTO));
-			}
-			return true;
-		};
-
-		static String getLogLine(Number input, Number constraint, VALIDATION_OPRATIONS oprations) {
-			return VALIDATION_LOGS.GIVEN_INPUT.toString() + SYMBOLS.SPACE + input + SYMBOLS.SPACE + VALIDATION_LOGS.IS_NOT
-					+ oprations + SYMBOLS.SPACE + VALIDATION_LOGS.TEST_VALUE + SYMBOLS.SPACE + constraint;
-		}
-
-	}
-
-	interface Expressions {
-		/*
-		 * Simple Expressions for demo purpose.
-		 */
-		BiFunction<Integer, Integer, Integer> AVERAGE = (val1, val2) -> (val1 + val2) / LIMITS.TWO.getVal();
-		BiFunction<Integer, Integer, Integer> ADD = (val1, val2) -> (val1 + val2);
-		BiFunction<Integer, Integer, Integer> SUBTRACT = (val1, val2) -> (val1 - val2);
-	}
-
-}
-
-enum VALIDATION_OPRATIONS {
-	NOTNULL, LESSTHAN, EQUALSTO, GREATERTHAN;
-}
-
-enum VALIDATION_LOGS {
-	GIVEN_INPUT, IS_NOT, TEST_VALUE;
 }
