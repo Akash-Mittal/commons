@@ -1,8 +1,11 @@
 package com.am.innovations.api;
 
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
-import com.am.innovations.enums.SYMBOLS;lic interface API {
+import com.am.innovations.enums.SYMBOLS;
+
+interface API {
 	String CONTEXT_PATH = "/";
 
 	interface Version {
