@@ -2,6 +2,7 @@ package com.am.innovations.validations;
 
 import java.util.function.BiPredicate;
 
+import com.am.innovations.enums.SYMBOLS;
 import com.am.innovations.exception.ValidationException;
 
 public interface FailFastNonNull {
