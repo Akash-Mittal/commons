@@ -3,7 +3,7 @@ package com.am.innovations.enums;
 public enum SYMBOLS {
 
 	UNDERSCORE("_", "_"), SPACE(" ", " "), COLON(":", ":"), SLASH("/", "/"), DOT(".", "\\."), BACKSLASH("\\", "\\"),
-	PIPE("|", "\\|");
+	PIPE("|", "\\|"), FORWARD_SLASH("/", "\\/");
 
 	String val;
 	String regexEqual;
