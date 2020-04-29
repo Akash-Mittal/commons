@@ -1,9 +1,10 @@
 package com.am.innovations.enums;
 
+// All Symbols
 public enum SYMBOLS {
 
 	UNDERSCORE("_", "_"), SPACE(" ", " "), COLON(":", ":"), SLASH("/", "/"), DOT(".", "\\."), BACKSLASH("\\", "\\"),
-	PIPE("|", "\\|"), FORWARD_SLASH("/", "\\/"),QUESTION_MARK("?","\\?"),SEMI_COLON(";",";");
+	PIPE("|", "\\|"), FORWARD_SLASH("/", "\\/"), QUESTION_MARK("?", "\\?"), SEMI_COLON(";", ";"), EQUALS("=", "=");
 
 	String val;
 	String regexEqual;
